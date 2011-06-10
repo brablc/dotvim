@@ -1,6 +1,6 @@
 Installation:
 
-    git clone git://github.com/erikfercak/dotvim.git ~/.vim
+    git clone git@github.com:brablc/dotvim.git ~/.vim
 
 Create symlinks:
 
@@ -10,8 +10,6 @@ Switch to the `~/.vim` directory, and fetch submodules:
 
     cd ~/.vim
     git submodule init
+    # env GIT_SSL_NO_VERIFY=true
     git submodule update
-
-Build ruby extension:
-    cd ~/.vim/bundle/command-t
-    rake make
+	
