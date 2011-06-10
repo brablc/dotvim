@@ -19,7 +19,7 @@ set hlsearch
 set ignorecase
 set smartcase
 
-let mapleader = ","
+let mapleader = "\\"
 nnoremap <Leader><space> a<c-x><c-o>
 " Clear search highlight
 nnoremap <Leader>h :noh<cr>
@@ -38,7 +38,7 @@ set expandtab
 set smarttab
 
 " Colors and fonts
-colorscheme blue
+colorscheme vividchalk
 
 " Nicer status line
 set statusline=%F%m%r%h%w\ [%{&ff}/%Y]%=[%04l,%04v][%p%%/%L]
@@ -74,22 +74,11 @@ set showmode
 
 " Mappings
 
-map <C-S> :w<CR>
-imap <C-S> <C-O>:w<CR>
-map <C-Q> :q<CR>
-imap <C-Q> <Esc>:q<CR>
-
-" reindent whole file
-nmap <F11> 1G=G``
-
 " Tabs - switch to next tab
 nmap <F6> gT
 nmap <D-S-Left> gT
-nmap <C-F6> gt   " - Most likely ignored by Putty
 nmap <D-S-Right> gt
 
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
 nnoremap <silent> <F11> :BufExplorer<CR>
 nnoremap <silent> <F12> :bn<CR>
-" - Most likely ignored by Putty
-nnoremap <silent> <S-F12> :bp<CR>
