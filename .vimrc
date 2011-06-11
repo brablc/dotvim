@@ -19,7 +19,7 @@ set hlsearch
 set ignorecase
 set smartcase
 
-let mapleader = "\\"
+let mapleader = ","
 nnoremap <Leader><space> a<c-x><c-o>
 " Clear search highlight
 nnoremap <Leader>h :noh<cr>
