@@ -74,11 +74,12 @@ set showmode
 
 " Mappings
 
-" Tabs - switch to next tab
-nmap <F6> gT
-nmap <D-S-Left> gT
-nmap <D-S-Right> gt
-
-" Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
+" - Add to ZZ and ZQ builtins
+nnoremap ZW :w<CR>
+" - Tabs - switch to next tab
+nnoremap <F6> gT
+" - Buffers
 nnoremap <silent> <F11> :BufExplorer<CR>
 nnoremap <silent> <F12> :bn<CR>
+
+
