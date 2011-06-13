@@ -12,6 +12,7 @@ call pathogen#runtime_append_all_bundles()
 set nobackup
 set nowritebackup
 set history=50 " keep 50 lines of command line history
+set autochdir
 
 " Search
 set incsearch " do incremental searching
@@ -50,7 +51,13 @@ set showcmd " display incomplete commands
 
 " Display extra whitespace
 nmap <Leader>l :set list!<CR>
-set list listchars=tab:»·,trail:·
+
+if has("gui_running")
+    " Maximize gvim window.
+    set lines=999 columns=999
+else 
+    set list listchars=tab:»·,trail:·
+endif
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
@@ -77,9 +84,10 @@ set showmode
 " - Add to ZZ and ZQ builtins
 nnoremap ZW :w<CR>
 " - Tabs - switch to next tab
-nnoremap <F6> gT
+nnoremap <F6> gt
 " - Buffers
 nnoremap <silent> <F11> :BufExplorer<CR>
 nnoremap <silent> <F12> :bn<CR>
-
+" - MRU
+nnoremap <F10> :MRU<CR>
 
