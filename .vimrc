@@ -9,10 +9,10 @@ call pathogen#runtime_append_all_bundles()
 
 " Generic VIM settings
 
-set nobackup
-set nowritebackup
 set history=50 " keep 50 lines of command line history
 set autochdir
+" set foldenable
+" set viewoptions=folds,options,cursor,unix,slash
 
 " Search
 set incsearch " do incremental searching
@@ -63,7 +63,9 @@ endif
 " (only complete to the longest unambiguous match, and show a menu)
 set completeopt=menu,preview
 " set wildmode=list:longest,list:full
-set wildchar=<Tab> wildmenu wildmode=full
+set wildmenu
+set wildchar=<Tab> 
+set wildmode=full
 set complete=.,t
 
 set cf  " Enable error files & error jumping.
@@ -81,6 +83,9 @@ set showmode
 
 " Mappings
 
+" - Clearing highlighted search
+nmap <silent> <leader>/ :nohlsearch<CR>
+
 " - Add to ZZ and ZQ builtins
 nnoremap ZW :w<CR>
 " - Tabs - switch to next tab
@@ -90,4 +95,13 @@ nnoremap <silent> <F11> :BufExplorer<CR>
 nnoremap <silent> <F12> :bn<CR>
 " - MRU
 nnoremap <F10> :MRU<CR>
+
+" - visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
+
+" Plugins
+
+let g:backup_directory="~/tmp/.vim-backup"
+
 
