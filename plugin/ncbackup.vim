@@ -37,6 +37,8 @@ set writebackup
 set backup
 set backupext=;1
 
+execute "set directory^=" . g:ncbackup_directory
+
 " Subsection: s:Make_Backup_Dir 
 "
 function s:Make_Backup_Dir (Path)
@@ -65,7 +67,6 @@ function s:Set_Backup (Doc_Path, Doc_Name)
    let l:Backup_Path = expand(g:ncbackup_directory) . '/' . substitute( a:Doc_Path, '\(:\\\|\\\)', '/', 'g')
    call s:Make_Backup_Dir (l:Backup_Path)
    execute "set backupdir^=" . l:Backup_Path
-   execute "set directory^=" . l:Backup_Path
    let l:Existing_Backups = sort ( split ( glob (l:Backup_Path . '/' . a:Doc_Name . ';*'), "\n"), "s:Version_Compare")
    if empty (l:Existing_Backups)
       set backupext=;1
@@ -80,6 +81,5 @@ function s:Set_Backup (Doc_Path, Doc_Name)
 endfunction Set_Backup
 
 call s:Make_Backup_Dir (expand (g:ncbackup_directory))
-
 autocmd BufWritePre * :call s:Set_Backup ( expand ('<afile>:p:h'), expand ('<afile>:p:t'))
 
