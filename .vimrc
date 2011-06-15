@@ -1,18 +1,17 @@
-" Forget VI it's <current year>!
+"" Forget VI - must be first command
 set nocompatible
 
-" Pathogen
-" Needed on some linux distros.
-" see http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
-call pathogen#helptags()
+" Pathogen - processes bundles as if they were installed properly
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
-" Generic VIM settings
+"" Generic VIM settings
 
 set history=50 " keep 50 lines of command line history
-set autochdir
-" set foldenable
-" set viewoptions=folds,options,cursor,unix,slash
+set foldenable
+set viewoptions=folds,options,cursor,unix,slash
+set pastetoggle=<F2>
+set showmode
 
 " Search
 set incsearch " do incremental searching
@@ -20,26 +19,16 @@ set hlsearch
 set ignorecase
 set smartcase
 
-let mapleader = ","
-nnoremap <Leader><space> a<c-x><c-o>
-" Clear search highlight
-nnoremap <Leader>h :noh<cr>
-" Delete trailing spaces
-nnoremap <Leader>b :silent :%s/\s\+$//<cr>:noh<cr>``
-
-" Go fullscreen
-" set fu
-
 set ruler " show the cursor position all the time
 
-" tabs
+" Tabs
 set ts=4
 set sw=4
 set expandtab
 set smarttab
 
 " Colors and fonts
-colorscheme vividchalk
+" colorscheme vividchalk
 
 " Nicer status line
 set statusline=%F%m%r%h%w\ [%{&ff}/%Y]%=[%04l,%04v][%p%%/%L]
@@ -49,23 +38,20 @@ set laststatus=2
 set guioptions+=c
 set showcmd " display incomplete commands
 
-" Display extra whitespace
-nmap <Leader>l :set list!<CR>
-
 if has("gui_running")
     " Maximize gvim window.
     set lines=999 columns=999
-else 
-    set list listchars=tab:»·,trail:·
 endif
+
+set nolist
+set listchars=tab:»·,trail:·
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
 set completeopt=menu,preview
-" set wildmode=list:longest,list:full
 set wildmenu
 set wildchar=<Tab> 
-set wildmode=full
+set wildmode=list:longest,list:full
 set complete=.,t
 
 set cf  " Enable error files & error jumping.
@@ -76,15 +62,19 @@ syntax enable
 filetype plugin indent on
 au FileType php set omnifunc=phpcomplete
 
-" Disable autoindent on paste
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
-set showmode
+" Leader Mappings
 
-" Mappings
+let mapleader = ","
+" - Completion?
+nnoremap <Leader><space> a<c-x><c-o>
+" - Clear search highlight
+nnoremap <silent> <Leader>h :nohlsearch<cr>
+" - Delete trailing blanks (spaces)
+nnoremap <Leader>b :silent :%s/\s\+$//<cr>:noh<cr>``
+" - Display extra whitespace
+nnoremap <Leader>l :set list!<CR>
 
-" - Clearing highlighted search
-nmap <silent> <leader>/ :nohlsearch<CR>
+" Regular Mappings
 
 " - Add to ZZ and ZQ builtins
 nnoremap ZW :w<CR>
@@ -99,9 +89,4 @@ nnoremap <F10> :MRU<CR>
 " - visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
-
-" Plugins
-
-let g:backup_directory="~/tmp/.vim-backup"
-
 

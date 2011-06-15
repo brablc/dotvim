@@ -61,6 +61,8 @@
 [submodule "bundle/mru"]
 	path = bundle/mru
 	url = https://github.com/vim-scripts/mru.vim
+	ignore = untracked
 [submodule "bundle/project"]
 	path = bundle/project
 	url = https://github.com/shemerey/vim-project.git
+	ignore = untracked
