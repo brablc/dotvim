@@ -77,24 +77,28 @@ nnoremap <silent> <Leader>h :nohlsearch<cr>
 " - Delete trailing blanks (spaces)
 nnoremap <Leader>b :silent :%s/\s\+$//<cr>:noh<cr>``
 " - Display extra whitespace
-nnoremap <Leader>l :set list!<CR>
+nnoremap <Leader>l :set list!<cr>
 " - Chage dir to the current path
-nnoremap <Leader>p :cd %:p:h<CR>
+nnoremap <Leader>p :cd %:p:h<cr>
+" - Search current word
+nnoremap <Leader>a :Ack <cword><cr>
+" - Source vimrc
+nnoremap <Leader>v :source $MYVIMRC<cr>
 
-map <Leader>f <Esc>:EnableFastPHPFolds<Cr>
-map <Leader>u <Esc>:DisablePHPFolds<Cr>
+map <Leader>f <Esc>:EnableFastPHPFolds<cr>
+map <Leader>u <Esc>:DisablePHPFolds<cr>
 
 " Regular Mappings
 
 " - Add to ZZ and ZQ builtins
-nnoremap ZW :w<CR>
+nnoremap ZW :w<cr>
 " - Tabs - switch to next tab
 nnoremap <F6> gt
 " - Buffers
-nnoremap <silent> <F11> :BufExplorer<CR>
-nnoremap <silent> <F12> :bn<CR>
+nnoremap <silent> <F11> :BufExplorer<cr>
+nnoremap <silent> <F12> :bn<cr>
 " - MRU
-nnoremap <F10> :MRU<CR>
+nnoremap <F10> :MRU<cr>
 
 " - visual shifting (does not exit Visual mode)
 vnoremap < <gv
