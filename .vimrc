@@ -14,7 +14,6 @@ set viewoptions=folds,options,cursor,unix,slash
 set pastetoggle=<F2>
 set showmode
 "set number
-set virtualedit=onemore
 
 " Search
 set incsearch " do incremental searching
