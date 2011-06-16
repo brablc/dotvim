@@ -83,7 +83,8 @@ nnoremap <Leader>p :cd %:p:h<cr>
 " - Search current word
 nnoremap <Leader>a :Ack <cword><cr>
 " - Source vimrc
-nnoremap <Leader>v :source $MYVIMRC<cr>
+nnoremap <Leader>ve :edit ~/.vim/.vimrc<cr>
+nnoremap <Leader>vs :source ~/.vim/.vimrc<cr>
 
 map <Leader>f <Esc>:EnableFastPHPFolds<cr>
 map <Leader>u <Esc>:DisablePHPFolds<cr>
