@@ -8,10 +8,13 @@ call pathogen#helptags()
 "" Generic VIM settings
 
 set history=50 " keep 50 lines of command line history
-set foldenable
+set backspace=indent,eol,start
+"set foldenable
 set viewoptions=folds,options,cursor,unix,slash
 set pastetoggle=<F2>
 set showmode
+"set number
+set virtualedit=onemore
 
 " Search
 set incsearch " do incremental searching
@@ -27,8 +30,6 @@ set sw=4
 set expandtab
 set smarttab
 
-" Colors and fonts
-" colorscheme vividchalk
 
 " Nicer status line
 set statusline=%F%m%r%h%w\ [%{&ff}/%Y]%=[%04l,%04v][%p%%/%L]
@@ -38,13 +39,17 @@ set laststatus=2
 set guioptions+=c
 set showcmd " display incomplete commands
 
+set nolist
 if has("gui_running")
     " Maximize gvim window.
     set lines=999 columns=999
+    colorscheme solarized
+    set background=dark 
+else
+    set listchars=tab:»·,trail:·
+    colorscheme blue
 endif
 
-set nolist
-set listchars=tab:»·,trail:·
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
@@ -62,6 +67,7 @@ syntax enable
 filetype plugin indent on
 au FileType php set omnifunc=phpcomplete
 
+
 " Leader Mappings
 
 let mapleader = ","
@@ -73,6 +79,11 @@ nnoremap <silent> <Leader>h :nohlsearch<cr>
 nnoremap <Leader>b :silent :%s/\s\+$//<cr>:noh<cr>``
 " - Display extra whitespace
 nnoremap <Leader>l :set list!<CR>
+" - Chage dir to the current path
+nnoremap <Leader>p :cd %:p:h<CR>
+
+map <Leader>f <Esc>:EnableFastPHPFolds<Cr>
+map <Leader>u <Esc>:DisablePHPFolds<Cr>
 
 " Regular Mappings
 

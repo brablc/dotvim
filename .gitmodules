@@ -6,14 +6,6 @@
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
 	ignore = untracked
-#[submodule "bundle/command-t"]
-#	path = bundle/command-t
-#	url = git://git.wincent.com/command-t.git
-#	ignore = untracked
-#[submodule "bundle/solarized"]
-#	path = bundle/solarized
-#	url = https://github.com/altercation/vim-colors-solarized.git
-#	ignore = untracked
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = https://github.com/tsaleh/vim-matchit.git
@@ -21,10 +13,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-	ignore = untracked
-[submodule "vim-repeat"]
-	path = vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
 	ignore = untracked
 [submodule "bundle/repeat"]
 	path = bundle/repeat
@@ -62,7 +50,11 @@
 	path = bundle/mru
 	url = https://github.com/vim-scripts/mru.vim
 	ignore = untracked
-[submodule "bundle/project"]
-	path = bundle/project
-	url = https://github.com/shemerey/vim-project.git
+[submodule "bundle/solarized"]
+	path = bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+	ignore = untracked
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
 	ignore = untracked
