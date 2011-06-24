@@ -14,7 +14,7 @@ set viewoptions=folds,options,cursor,unix,slash
 set pastetoggle=<F2>
 set showmode
 "set number
-set wildignore+=*.gif,*.jpg,*.png,.git,.svn
+set wildignore+=*.gif,*.jpg,*.png,,tmp,cache
 
 " Search
 set incsearch " do incremental searching
