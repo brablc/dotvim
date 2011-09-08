@@ -14,7 +14,7 @@ set viewoptions=folds,options,cursor,unix,slash
 set pastetoggle=<F2>
 set showmode
 "set number
-set wildignore+=*.gif,*.jpg,*.png,,tmp,cache
+set wildignore+=*.gif,*.jpg,*.png,,tmp,cache,rwproxy
 
 " Search
 set incsearch " do incremental searching
@@ -30,6 +30,7 @@ set sw=4
 set expandtab
 set smarttab
 
+set nowrap
 
 " Nicer status line
 set statusline=%F%m%r%h%w\ [%{&ff}/%Y]%=[%04l,%04v][%p%%/%L]
