@@ -1,20 +1,38 @@
 "" Forget VI - must be first command
 set nocompatible
+set encoding=utf-8
 
 " Pathogen - processes bundles as if they were installed properly
+filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+
+filetype plugin indent on
+syntax enable
+au FileType php set omnifunc=phpcomplete
 
 "" Generic VIM settings
 
 set history=50 " keep 50 lines of command line history
 set backspace=indent,eol,start
-"set foldenable
+set foldenable
 set viewoptions=folds,options,cursor,unix,slash
 set pastetoggle=<F2>
 set showmode
-"set number
-set wildignore+=*.gif,*.jpg,*.png,,tmp,cache,rwproxy
+" set number
+set wildignore+=*.gif,*.jpg,*.png,tmp,cache,rwproxy
+
+function! RestoreCursorPosition()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call RestoreCursorPosition()
+augroup END
 
 " Search
 set incsearch " do incremental searching
@@ -56,17 +74,13 @@ endif
 " (only complete to the longest unambiguous match, and show a menu)
 set completeopt=menu,preview
 set wildmenu
-set wildchar=<Tab> 
+" set wildchar=<Tab> 
 set wildmode=list:longest,list:full
 set complete=.,t
 
 set cf  " Enable error files & error jumping.
 set clipboard+=unnamed  " Yanks go on clipboard instead.
 
-set encoding=utf-8
-syntax enable
-filetype plugin indent on
-au FileType php set omnifunc=phpcomplete
 
 
 " Leader Mappings
@@ -85,8 +99,8 @@ nnoremap <Leader>p :cd %:p:h<cr>
 " - Search current word
 nnoremap <Leader>a :Ack <cword><cr>
 " - Source vimrc
-nnoremap <Leader>ve :edit ~/.vim/.vimrc<cr>
-nnoremap <Leader>vs :source ~/.vim/.vimrc<cr>
+nnoremap <Leader>ve :edit $MYVIMRC<cr>
+nnoremap <Leader>vs :source $MYVIMRC<cr>
 
 map <Leader>f <Esc>:EnableFastPHPFolds<cr>
 map <Leader>u <Esc>:DisablePHPFolds<cr>
@@ -103,7 +117,21 @@ nnoremap <silent> <F12> :bn<cr>
 " - MRU
 nnoremap <F10> :MRU<cr>
 
+" - Open each buffer in a new tab
+map ,bt :bufdo tab split<cr>
+
 " - visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
+
+" Sum numbers example: 
+"   let S=0
+"   %s/\v(.*)/\=Sum(submatch(0))/  
+"   echo S 
+let g:S = 0
+function! Sum(number)
+  let g:S = g:S + str2float(a:number)
+  return a:number
+endfunction
+
 
