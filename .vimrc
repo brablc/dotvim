@@ -47,6 +47,7 @@ set ts=4
 set sw=4
 set expandtab
 set smarttab
+set switchbuf=usetab
 
 set nowrap
 
@@ -67,6 +68,7 @@ if has("gui_running")
 else
     set listchars=tab:»·,trail:·
     colorscheme blue
+    set t_Co=256
 endif
 
 
@@ -81,13 +83,9 @@ set complete=.,t
 set cf  " Enable error files & error jumping.
 set clipboard+=unnamed  " Yanks go on clipboard instead.
 
-
-
 " Leader Mappings
-
 let mapleader = ","
-" - Completion?
-nnoremap <Leader><space> a<c-x><c-o>
+
 " - Clear search highlight
 nnoremap <silent> <Leader>h :nohlsearch<cr>
 " - Delete trailing blanks (spaces)
@@ -98,27 +96,33 @@ nnoremap <Leader>l :set list!<cr>
 nnoremap <Leader>p :cd %:p:h<cr>
 " - Search current word
 nnoremap <Leader>a :Ack <cword><cr>
+" - Replace globally current word
+nnoremap <Leader>s :%s/\v<cword>//g<left><left>
+"   double percentage sign in command mode is expanded to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+nnoremap <leader>T :CommandTFlush<cr>\|:CommandT %%<cr>
 " - Source vimrc
 nnoremap <Leader>ve :edit $MYVIMRC<cr>
 nnoremap <Leader>vs :source $MYVIMRC<cr>
-
-map <Leader>f <Esc>:EnableFastPHPFolds<cr>
-map <Leader>u <Esc>:DisablePHPFolds<cr>
+" - PHP source code folding
+nnoremap <Leader>pf <Esc>:EnableFastPHPFolds<cr>
+nnoremap <Leader>pu <Esc>:DisablePHPFolds<cr>
 
 " Regular Mappings
 
-" - Add to ZZ and ZQ builtins
-nnoremap ZW :w<cr>
 " - Tabs - switch to next tab
-nnoremap <F6> gt
+nnoremap <Leader>, gt
 " - Buffers
-nnoremap <silent> <F11> :BufExplorer<cr>
-nnoremap <silent> <F12> :bn<cr>
-" - MRU
-nnoremap <F10> :MRU<cr>
-
+nnoremap <Leader>be :BufExplorer<cr>
+nnoremap <Leader>bn :bn<cr>
 " - Open each buffer in a new tab
-map ,bt :bufdo tab split<cr>
+nnoremap <Leader>bt :bufdo tab split<cr>
+" - MRU
+nnoremap <Leader>m :MRU<cr>
+
+
+" - Add to ZZ and ZQ builtins
+noremap ZW :w<cr>
 
 " - visual shifting (does not exit Visual mode)
 vnoremap < <gv
@@ -133,5 +137,3 @@ function! Sum(number)
   let g:S = g:S + str2float(a:number)
   return a:number
 endfunction
-
-
