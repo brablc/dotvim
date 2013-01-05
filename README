@@ -5,7 +5,3 @@ Installation:
 Init .vim directory:
 
     ~/.vim/.dotvim-init
-
-Add following line to your .bashrc to import aliases:
-    
-    . ~/.vim/.bashrc

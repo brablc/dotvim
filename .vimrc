@@ -2,10 +2,38 @@
 set nocompatible
 set encoding=utf-8
 
-" Pathogen - processes bundles as if they were installed properly
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'markabe/bufexplorer'
+Bundle 'mileszs/ack.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tomtom/checksyntax_vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'tsaleh/vim-supertab'
+Bundle 'vim-scripts/FavEx'
+Bundle 'vim-scripts/Tail-Bundle'
+Bundle 'kien/ctrlp.vim'
+
+" vim-scripts repos
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
 
 filetype plugin indent on
 syntax enable
@@ -100,7 +128,6 @@ nnoremap <Leader>a :Ack <cword><cr>
 nnoremap <Leader>s :%s/\v<cword>//g<left><left>
 "   double percentage sign in command mode is expanded to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-nnoremap <leader>T :CommandTFlush<cr>\|:CommandT %%<cr>
 " - Source vimrc
 nnoremap <Leader>ve :edit $MYVIMRC<cr>
 nnoremap <Leader>vs :source $MYVIMRC<cr>
@@ -118,7 +145,7 @@ nnoremap <Leader>bn :bn<cr>
 " - Open each buffer in a new tab
 nnoremap <Leader>bt :bufdo tab split<cr>
 " - MRU
-nnoremap <Leader>m :MRU<cr>
+nnoremap <Leader>m :CtrlPMRU<cr>
 
 
 " - Add to ZZ and ZQ builtins
