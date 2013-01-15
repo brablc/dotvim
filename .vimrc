@@ -15,6 +15,7 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'kien/ctrlp.vim'
 Bundle 'markabe/bufexplorer'
 Bundle 'mileszs/ack.vim'
 Bundle 'msanders/snipmate.vim'
@@ -29,7 +30,6 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'tsaleh/vim-supertab'
 Bundle 'vim-scripts/FavEx'
 Bundle 'vim-scripts/Tail-Bundle'
-Bundle 'kien/ctrlp.vim'
 
 " vim-scripts repos
 " Bundle 'L9'
@@ -91,7 +91,7 @@ set nolist
 if has("gui_running")
     " Maximize gvim window.
     set lines=999 columns=999
-    colorscheme solarized
+    " colorscheme solarized
     set background=dark 
 else
     set listchars=tab:»·,trail:·
@@ -146,7 +146,6 @@ nnoremap <Leader>bn :bn<cr>
 nnoremap <Leader>bt :bufdo tab split<cr>
 " - MRU
 nnoremap <Leader>m :CtrlPMRU<cr>
-
 
 " - Add to ZZ and ZQ builtins
 noremap ZW :w<cr>
