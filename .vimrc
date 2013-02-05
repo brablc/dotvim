@@ -4,6 +4,7 @@ set encoding=utf-8
 
 filetype off
 
+let $GIT_SSL_NO_VERIFY = 'true' 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -153,6 +154,9 @@ noremap ZW :w<cr>
 " - visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
+
+" Solve problems with disappearing MRU?
+let g:ctrlp_clear_cache_on_exit = 0
 
 " Sum numbers example: 
 "   let S=0
