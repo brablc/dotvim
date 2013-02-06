@@ -4,8 +4,19 @@ set encoding=utf-8
 
 filetype off
 
+" Set .vim according to loaded .vimrc
+let g:vim_dir = fnamemodify($MYVIMRC, ":h").'/.vim'
+
+" Solve problems with disappearing MRU?
+let g:ctrlp_clear_cache_on_exit = 0
+" Store cache inside of .vim
+let g:ctrlp_cache_dir = g:vim_dir.'/.cache/ctrlp'
+" Store backup inside of .vim
+let g:ncbackup_directory = g:vim_dir.'/.ncbackup/'.$USER
+" On some computers ca for github is missing
 let $GIT_SSL_NO_VERIFY = 'true' 
-set rtp+=~/.vim/bundle/vundle/
+
+let &runtimepath = g:vim_dir . '/bundle/vundle' . ',' . &runtimepath
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -154,9 +165,6 @@ noremap ZW :w<cr>
 " - visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
-
-" Solve problems with disappearing MRU?
-let g:ctrlp_clear_cache_on_exit = 0
 
 " Sum numbers example: 
 "   let S=0
