@@ -10,7 +10,7 @@ let g:vim_dir = fnamemodify($MYVIMRC, ":h").'/.vim'
 " Solve problems with disappearing MRU?
 let g:ctrlp_clear_cache_on_exit = 0
 " Store cache inside of .vim
-let g:ctrlp_cache_dir = g:vim_dir.'/.cache/ctrlp'
+let g:ctrlp_cache_dir = g:vim_dir.'/.ctrlp/'.$USER
 " Store backup inside of .vim
 let g:ncbackup_directory = g:vim_dir.'/.ncbackup/'.$USER
 " On some computers ca for github is missing
