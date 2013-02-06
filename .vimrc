@@ -17,7 +17,7 @@ let g:ncbackup_directory = g:vim_dir.'/.ncbackup/'.$USER
 let $GIT_SSL_NO_VERIFY = 'true' 
 
 let &runtimepath = g:vim_dir . '/bundle/vundle' . ',' . &runtimepath
-call vundle#rc()
+call vundle#rc(g:vim_dir.'/bundle')
 
 " let Vundle manage Vundle
 " required! 
