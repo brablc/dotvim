@@ -4,7 +4,7 @@ set encoding=utf-8
 
 filetype off
 
-" Set .vim according to loaded .vimrc
+" Set .vim accordingly to loaded .vimrc
 let g:vim_dir = fnamemodify($MYVIMRC, ":h").'/.vim'
 
 " Solve problems with disappearing MRU?
@@ -23,29 +23,30 @@ call vundle#rc(g:vim_dir.'/bundle')
 " required! 
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" original repos on github
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/ctrlp.vim'
-Bundle 'markabe/bufexplorer'
-Bundle 'mileszs/ack.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tomtom/checksyntax_vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'tsaleh/vim-matchit'
-Bundle 'tsaleh/vim-supertab'
-Bundle 'vim-scripts/FavEx'
-Bundle 'vim-scripts/Tail-Bundle'
+" My Bundles here (original repos on github):
 
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
+" MRU, file browser
+Bundle 'kien/ctrlp.vim' 
+" Grep like search
+Bundle 'mileszs/ack.vim' 
+" Show list of opened buffers
+Bundle 'markabe/bufexplorer'
+" Snippets
+Bundle 'garbas/snipmate.vim'
+" Commenting blocks of code
+Bundle 'scrooloose/nerdcommenter'
+" Check syntax when saving files
+Bundle 'tomtom/checksyntax_vim'
+" Manipulte surroundings (braces, tags, ...)
+Bundle 'tpope/vim-surround'
+" Match pairs with % key
+Bundle 'tsaleh/vim-matchit'
+" Tab completion
+Bundle 'tsaleh/vim-supertab'
+" View log files
+Bundle 'vim-scripts/Tail-Bundle'
+" Work with GIT
+" Bundle 'tpope/vim-fugitive' 
 
 filetype plugin indent on
 syntax enable
@@ -103,8 +104,7 @@ set nolist
 if has("gui_running")
     " Maximize gvim window.
     set lines=999 columns=999
-    " colorscheme solarized
-    set background=dark 
+    " set background=dark 
 else
     set listchars=tab:»·,trail:·
     colorscheme blue
