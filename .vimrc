@@ -31,8 +31,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim' 
 " Show list of opened buffers
 Bundle 'markabe/bufexplorer'
+" Support utils for snipmate
+Bundle 'MarcWeber/vim-addon-mw-utils'
 " Snippets
-Bundle 'garbas/snipmate.vim'
+Bundle 'garbas/vim-snipmate'
 " Commenting blocks of code
 Bundle 'scrooloose/nerdcommenter'
 " Check syntax when saving files
