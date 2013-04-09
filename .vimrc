@@ -103,13 +103,13 @@ set guioptions+=c
 set showcmd " display incomplete commands
 
 set nolist
+colorscheme blue
+
 if has("gui_running")
     " Maximize gvim window.
     set lines=999 columns=999
-    " set background=dark 
 else
     set listchars=tab:»·,trail:·
-    colorscheme blue
     set t_Co=256
 endif
 

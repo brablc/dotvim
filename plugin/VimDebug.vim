@@ -2,7 +2,7 @@
 " email: vimDebug at iijo dot org
 " http://iijo.org
 
-if (!has('perl') && !has('signs'))
+if (!has('perl') || !has('signs'))
     finish
 endif
 
