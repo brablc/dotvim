@@ -31,12 +31,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim' 
 " Show list of opened buffers
 Bundle 'markabe/bufexplorer'
-" Support utils for snipmate
-Bundle 'MarcWeber/vim-addon-mw-utils'
-" Snippets
-Bundle 'garbas/vim-snipmate'
 " Commenting blocks of code
-Bundle 'scrooloose/nerdcommenter'
+" Bundle 'scrooloose/nerdcommenter'
 " Check syntax when saving files
 Bundle 'tomtom/checksyntax_vim'
 " Manipulte surroundings (braces, tags, ...)
@@ -56,6 +52,7 @@ au FileType php set omnifunc=phpcomplete
 
 "" Generic VIM settings
 
+let g:is_posix = 1 " allow posix shell proper coloring $()
 set history=50 " keep 50 lines of command line history
 set backspace=indent,eol,start
 set foldenable
