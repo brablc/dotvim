@@ -1,15 +1,7 @@
 "-------------------------------------------------------------------------------
-"  Description: Numbered Central Backup - tested on Linux and Windows
-"          $Id$
-"    Copyright: Copyright (C) 2011 Ondrej brablc, (C) 2006 Martin Krischik
+"  Description: Numbered Central Backup - tested on Linux and Windows, Mac
+"    Copyright: Copyright (C) 2011 Ondrej Brablc, (C) 2006 Martin Krischik
 "   Maintainer: Ondrej Brablc
-"      $Author$
-"        $Date$
-"      Version: 1.0
-"    $Revision$
-"     $HeadURL$
-"      History: 14.06.2011 OB Remove VMS, refactor to central dir based on
-"               http://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/plugin/backup.vim
 "-------------------------------------------------------------------------------
 " Customize:
 "  g:ncbackup_directory   name of backup directory central to edited file
@@ -66,7 +58,7 @@ endfunction s:Version_Compare
 function s:Set_Backup (Doc_Path, Doc_Name)
    let l:Backup_Path = expand(g:ncbackup_directory) . '/' . substitute( a:Doc_Path, '\(:\\\|\\\)', '/', 'g')
    call s:Make_Backup_Dir (l:Backup_Path)
-   execute "set backupdir^=" . l:Backup_Path
+   execute "set backupdir^=" . fnameescape(l:Backup_Path)
    let l:Existing_Backups = sort ( split ( glob (l:Backup_Path . '/' . a:Doc_Name . ';*'), "\n"), "s:Version_Compare")
    if empty (l:Existing_Backups)
       set backupext=;1
