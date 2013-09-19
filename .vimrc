@@ -11,6 +11,8 @@ let g:vim_dir = fnamemodify($MYVIMRC, ":h").'/.vim'
 let g:ctrlp_clear_cache_on_exit = 0
 " Store cache inside of .vim
 let g:ctrlp_cache_dir = g:vim_dir.'/.ctrlp/'.$USER
+" Search from external cwd
+let g:ctrlp_working_path_mode = ''
 " Store backup inside of .vim
 let g:ncbackup_directory = g:vim_dir.'/.ncbackup/'.$USER
 " On some computers ca for github is missing
