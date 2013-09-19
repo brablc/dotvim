@@ -41,6 +41,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tsaleh/vim-matchit'
 " Tab completion
 Bundle 'tsaleh/vim-supertab'
+Bundle "tomtom/tlib_vim"
 " View log files
 Bundle 'vim-scripts/Tail-Bundle'
 " Work with GIT
