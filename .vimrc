@@ -9,6 +9,10 @@ let g:vim_dir = fnamemodify($MYVIMRC, ":h").'/.vim'
 
 " Solve problems with disappearing MRU?
 let g:ctrlp_clear_cache_on_exit = 0
+if executable("ag")
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 " Store cache inside of .vim
 let g:ctrlp_cache_dir = g:vim_dir.'/.ctrlp/'.$USER
 " Search from external cwd
@@ -47,7 +51,7 @@ Bundle "tomtom/tlib_vim"
 " View log files
 Bundle 'vim-scripts/Tail-Bundle'
 " Work with GIT
-" Bundle 'tpope/vim-fugitive' 
+Bundle 'tpope/vim-fugitive' 
 
 filetype plugin indent on
 syntax enable
@@ -88,7 +92,7 @@ set ruler " show the cursor position all the time
 " Tabs
 set ts=4
 set sw=4
-set expandtab
+" set expandtab
 set smarttab
 set switchbuf=usetab
 
@@ -131,7 +135,7 @@ let mapleader = ","
 " - Clear search highlight
 nnoremap <silent> <Leader>h :nohlsearch<cr>
 " - Delete trailing blanks (spaces)
-nnoremap <Leader>b :silent :%s/\s\+$//<cr>:noh<cr>``
+nnoremap <Leader>t :silent :%s/\s\+$//<cr>:noh<cr>``
 " - Display extra whitespace
 nnoremap <Leader>l :set list!<cr>
 " - Chage dir to the current path
@@ -151,22 +155,33 @@ nnoremap <Leader>pu <Esc>:DisablePHPFolds<cr>
 
 " Regular Mappings
 
-" - Tabs - switch to next tab
-nnoremap <Leader>, gt
-" - Buffers
-nnoremap <Leader>be :BufExplorer<cr>
-nnoremap <Leader>bn :bn<cr>
 " - Open each buffer in a new tab
-nnoremap <Leader>bt :bufdo tab split<cr>
-" - MRU
+nnoremap <Leader>b :bufdo tab split<cr>
+" - MRU - use <c-b> to switch modes
 nnoremap <Leader>m :CtrlPMRU<cr>
-
 " - Add to ZZ and ZQ builtins
 noremap ZW :w<cr>
 
 " - visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
+
+" - Tabs - switch to next tab
+nnoremap <Leader>, gt
+" - Buffers
+nnoremap <Leader>0 :CtrlPBuffer<cr>
+nnoremap <Leader>1 1gt 
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
+nnoremap <Leader>6 6gt
+nnoremap <Leader>7 7gt
+nnoremap <Leader>8 8gt
+nnoremap <Leader>9 9gt
+
+" - Fugitive
+nnoremap <leader>gs :Gstatus<CR><C-w>15+
 
 " Sum numbers example: 
 "   let S=0
