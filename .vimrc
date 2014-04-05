@@ -52,6 +52,7 @@ Bundle "tomtom/tlib_vim"
 Bundle 'vim-scripts/Tail-Bundle'
 " Work with GIT
 Bundle 'tpope/vim-fugitive' 
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on
 syntax enable
