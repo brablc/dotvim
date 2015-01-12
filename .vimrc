@@ -100,7 +100,7 @@ set switchbuf=usetab
 set nowrap
 
 " Nicer status line
-set statusline=%F%m%r%h%w\ [%{&ff}/%Y]%=[%b\ 0x%B][%04l,%04v][%p%%/%L]
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}[%{&ff}/%Y]%=[%b\ 0x%B][%04l,%04v][%p%%/%L]
 set laststatus=2
 
 " Use console dialogs
