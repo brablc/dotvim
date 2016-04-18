@@ -31,10 +31,12 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here (original repos on github):
 
+" DetectIndent
+Bundle 'ciaranm/detectindent'
 " MRU, file browser
-Bundle 'kien/ctrlp.vim' 
+Bundle 'ctrlpvim/ctrlp.vim'
 " Grep like search
-Bundle 'mileszs/ack.vim' 
+Bundle 'mileszs/ack.vim'
 " Show list of opened buffers
 Bundle 'markabe/bufexplorer'
 " Commenting blocks of code
@@ -44,7 +46,7 @@ Bundle 'tomtom/checksyntax_vim'
 " Manipulte surroundings (braces, tags, ...)
 Bundle 'tpope/vim-surround'
 " Match pairs with % key
-Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-scripts/matchit.zip'
 " Tab completion
 Bundle 'tsaleh/vim-supertab'
 Bundle "tomtom/tlib_vim"
@@ -53,10 +55,13 @@ Bundle 'vim-scripts/Tail-Bundle'
 " Work with GIT
 Bundle 'tpope/vim-fugitive' 
 Bundle 'airblade/vim-gitgutter'
+" SQL
+Bundle 'vim-scripts/dbext.vim'
 
 filetype plugin indent on
 syntax enable
 au FileType php set omnifunc=phpcomplete
+autocmd BufReadPost * :DetectIndent
 
 "" Generic VIM settings
 
