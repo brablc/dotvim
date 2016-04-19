@@ -24,40 +24,38 @@ let $GIT_SSL_NO_VERIFY = 'true'
 
 let &runtimepath = g:vim_dir . '/bundle/Vundle.vim' . ',' . &runtimepath
 call vundle#rc(g:vim_dir.'/bundle')
+
 call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" My Bundles here (original repos on github):
+" My Plugins here (original repos on github):
 
 " DetectIndent
-Bundle 'ciaranm/detectindent'
+Plugin 'ciaranm/detectindent'
 " MRU, file browser
-Bundle 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Grep like search
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 " Show list of opened buffers
-Bundle 'markabe/bufexplorer'
-" Commenting blocks of code
-" Bundle 'scrooloose/nerdcommenter'
+Plugin 'markabe/bufexplorer'
 " Check syntax when saving files
-Bundle 'tomtom/checksyntax_vim'
+Plugin 'tomtom/checksyntax_vim'
 " Manipulte surroundings (braces, tags, ...)
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " Match pairs with % key
-Bundle 'vim-scripts/matchit.zip'
+Plugin 'vim-scripts/matchit.zip'
 " Tab completion
-Bundle 'tsaleh/vim-supertab'
-Bundle "tomtom/tlib_vim"
-" View log files
-Bundle 'vim-scripts/Tail-Bundle'
+Plugin 'tsaleh/vim-supertab'
+Plugin 'tomtom/tlib_vim'
 " Work with GIT
-" Bundle 'tpope/vim-fugitive' 
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 " SQL
-Bundle 'krisajenkins/vim-pipe'
-Bundle 'vim-scripts/dbext.vim'
+Plugin 'krisajenkins/vim-pipe'
+Plugin 'vim-scripts/dbext.vim'
+
+call vundle#end()
 
 filetype plugin indent on
 syntax enable
