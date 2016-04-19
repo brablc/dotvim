@@ -22,12 +22,12 @@ let g:ncbackup_directory = g:vim_dir.'/.ncbackup/'.$USER
 " On some computers ca for github is missing
 let $GIT_SSL_NO_VERIFY = 'true' 
 
-let &runtimepath = g:vim_dir . '/bundle/vundle' . ',' . &runtimepath
+let &runtimepath = g:vim_dir . '/bundle/Vundle.vim' . ',' . &runtimepath
 call vundle#rc(g:vim_dir.'/bundle')
+call vundle#begin()
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here (original repos on github):
 
@@ -53,7 +53,7 @@ Bundle "tomtom/tlib_vim"
 " View log files
 Bundle 'vim-scripts/Tail-Bundle'
 " Work with GIT
-Bundle 'tpope/vim-fugitive' 
+" Bundle 'tpope/vim-fugitive' 
 Bundle 'airblade/vim-gitgutter'
 " SQL
 Bundle 'krisajenkins/vim-pipe'
@@ -106,7 +106,7 @@ set switchbuf=usetab
 set nowrap
 
 " Nicer status line
-set statusline=%F%m%r%h%w\ %{fugitive#statusline()}[%{&ff}/%Y]%=[%b\ 0x%B][%04l,%04v][%p%%/%L]
+set statusline=%F%m%r%h%w\ [%{&ff}/%Y]%=[%b\ 0x%B][%04l,%04v][%p%%/%L]
 set laststatus=2
 
 " Use console dialogs
@@ -189,7 +189,7 @@ nnoremap <Leader>8 8gt
 nnoremap <Leader>9 9gt
 
 " - Fugitive
-nnoremap <leader>gs :Gstatus<CR><C-w>15+
+" nnoremap <leader>gs :Gstatus<CR><C-w>15+
 
 " Sum numbers example: 
 "   let S=0
