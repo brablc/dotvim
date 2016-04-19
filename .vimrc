@@ -56,6 +56,7 @@ Bundle 'vim-scripts/Tail-Bundle'
 Bundle 'tpope/vim-fugitive' 
 Bundle 'airblade/vim-gitgutter'
 " SQL
+Bundle 'krisajenkins/vim-pipe'
 Bundle 'vim-scripts/dbext.vim'
 
 filetype plugin indent on
@@ -137,6 +138,7 @@ set clipboard+=unnamed  " Yanks go on clipboard instead.
 
 " Leader Mappings
 let mapleader = ","
+let maplocalleader = ","
 
 " - Clear search highlight
 nnoremap <silent> <Leader>h :nohlsearch<cr>
@@ -145,7 +147,7 @@ nnoremap <Leader>t :silent :%s/\s\+$//<cr>:noh<cr>``
 " - Display extra whitespace
 nnoremap <Leader>l :set list!<cr>
 " - Chage dir to the current path
-nnoremap <Leader>p :cd %:p:h<cr>
+nnoremap <Leader>c :cd %:p:h<cr>
 " - Search current word
 nnoremap <Leader>a :Ack <cword><cr>
 " - Replace globally current word
