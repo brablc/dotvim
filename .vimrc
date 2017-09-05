@@ -51,9 +51,6 @@ Plugin 'tsaleh/vim-supertab'
 Plugin 'tomtom/tlib_vim'
 " Work with GIT
 Plugin 'airblade/vim-gitgutter'
-" SQL
-Plugin 'krisajenkins/vim-pipe'
-Plugin 'vim-scripts/dbext.vim'
 
 call vundle#end()
 
@@ -65,10 +62,10 @@ autocmd BufReadPost * :DetectIndent
 "" Generic VIM settings
 
 let g:is_posix = 1 " allow posix shell proper coloring $()
-set history=50 " keep 50 lines of command line history
+set history=100 " keep 50 lines of command line history
 set backspace=indent,eol,start
-set foldenable
-set viewoptions=folds,options,cursor,unix,slash
+set nofoldenable
+set viewoptions=options,cursor,unix,slash
 set pastetoggle=<F2>
 set showmode
 " set number
