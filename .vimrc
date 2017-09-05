@@ -51,6 +51,8 @@ Plugin 'tsaleh/vim-supertab'
 Plugin 'tomtom/tlib_vim'
 " Work with GIT
 Plugin 'airblade/vim-gitgutter'
+" CSV
+Plugin 'chrisbra/csv.vim'
 
 call vundle#end()
 
