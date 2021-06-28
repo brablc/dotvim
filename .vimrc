@@ -47,7 +47,7 @@ Plugin 'tpope/vim-surround'
 " Match pairs with % key
 Plugin 'vim-scripts/matchit.zip'
 " Tab completion
-Plugin 'tsaleh/vim-supertab'
+Plugin 'ervandew/supertab'
 Plugin 'tomtom/tlib_vim'
 " Work with GIT
 Plugin 'airblade/vim-gitgutter'
