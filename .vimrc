@@ -145,8 +145,10 @@ nnoremap <Leader>t :silent :%s/\s\+$//<cr>:noh<cr>``
 nnoremap <Leader>l :set list!<cr>
 " - Chage dir to the current path
 nnoremap <Leader>c :cd %:p:h<cr>
-" - Search current word
+"  -Search current word
 nnoremap <Leader>a :Ack <cword><cr>
+" Set tab stop to 4, expand tabs to spaces, and retab the whole document
+nnoremap <Leader>r :set tabstop=4 shiftwidth=4 expandtab<CR>:retab<CR>
 " - Replace globally current word
 nnoremap <Leader>s :%s/\v<cword>//g<left><left>
 "   double percentage sign in command mode is expanded to directory of current file - http://vimcasts.org/e/14
